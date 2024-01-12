@@ -41,4 +41,18 @@ vue 服务端渲染深度集成
         postLoader
     rimraf dist
     postcss浏览器前缀（postcss.config.js）
+    eslint 
+        eslint-config-standard + 依赖插件 eslint官方标准规则
+        eslint-plugin-html 识别vue里面js代码
+        eslint --fix --ext .js\jsx\vue
+        增量检查 
+            babel-eslint + eslint-loader预处理
+        更强制precommit钩子检查（git commit ）
+            husky（.git目录生成precommit钩子） + "precommit"   
+    .editorconfig+editorconfig插件 规范编辑器配置
+    webpack4升级
+        npm warn + TypeError undefine
+        webapck3手写插件内置集成
+        最后运行和build看看效果
+           
     
