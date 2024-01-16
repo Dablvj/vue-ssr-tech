@@ -7,9 +7,10 @@ vue+webpack 工作流搭建
 vue+vue-router+vuex 项目架构
 vue 服务端渲染深度集成
 
-#### 1
+### 
 
 ![](/books/2024-01-11-14.49.18.png)
+
 
 
 ### webpack4 升级
@@ -70,6 +71,7 @@ vue 服务端渲染深度集成
     vue-router、vuex集成   
 ### 服务端渲染构建流程
 ![](/books/2024-01-14-11.01.00.png)
+![](2024-01-14-19.30.13-1.png)
 
     1. 什么是服务端渲染（SEO，首屏加载时间、服务器压力）
         服务器生成html字符串
@@ -96,7 +98,7 @@ vue 服务端渲染深度集成
             
         2、Client Bundle：别忘了服务端只是生成前期首屏页面所需的 html ，后期的交互和数据处理还是需要能支持浏览器脚本的 Client Bundle 来完成。
             客户端配置文件要点：
-                 vue-server-renderer/client-plugin：客户端构建清单 vue-ssr-client-manifest.json
+                 vue-server-renderer/client-plugin：客户端构建清单（静态资源） vue-ssr-client-manifest.json
                     客户端js、css路径注入到 html 一起发给浏览器
 
             client-entry.js要点：
@@ -106,6 +108,8 @@ vue 服务端渲染深度集成
 
         4、服务端应用：其实上面都是准备工作，最重要的一步是将webpack构建后的资源代码给服务端用来生成 html 。我们需要用node写一个服务端应用，通过打包后的资源生成 html 并发送给浏览器    
             koa  
+            nodemon 自动监听文件变化
+            concurrently 一次性启动多个服务
 
   
     
